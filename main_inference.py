@@ -9,7 +9,7 @@ import threading
 import numpy as np
 import supervision as sv
 from inference_sdk import InferenceHTTPClient
-import aravis # Ensure the aravis python bindings are installed (gi.repository)
+# import aravis # Ensure the aravis python bindings are installed (gi.repository)
 from gi.repository import Aravis
 
 # --- 1. USER CONFIGURATION ---

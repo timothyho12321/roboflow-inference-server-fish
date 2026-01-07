@@ -1,7 +1,9 @@
 top_source: 'Hikrobot-MV-CS023-10GC-DA7235770'   # Top view GigE camera (Replace with actual Device ID)
 side_source: 'Hikrobot-MV-CS023-10GC-DA7235740'   # Side view GigE camera (Replace with actual Device ID)
-  
+
 
 model:
-  path_top_view: 'models/yolov8_hik_side_fish_pose_11s_250102_2026-01-02-keypoint-trial-0001.pt'
-  path_side_view: 'models/yolov8_hik_side_fish_pose_11s_250102_2026-01-02-keypoint-trial-0001.pt'
+  #  path_top_view: 'models/yolov8_hik_side_fish_pose_11s_250102_2026-01-02-keypoint-trial-0001.pt'
+  #  path_side_view: 'models/yolov8_hik_side_fish_pose_11s_250102_2026-01-02-keypoint-trial-0001.pt'
+  path_top_view: '2026-01-02-keypoint-trial-0001/4'   # Top view GigE camera (Replace with actual Device ID)
+  path_side_view: '2026-01-02-keypoint-trial-0001/4'

@@ -3,5 +3,5 @@ side_source: 'Hikrobot-MV-CS023-10GC-DA7235740'   # Side view GigE camera (Repla
   
 
 model:
-  path_top_view: 'models/yolov8_hik_top_fish_detector_251217_18-25-1217-0001.pt'
-  path_side_view: 'models/yolov8_hik_side_fish_obb_251223_21-25-1223-0001.pt'
+  path_top_view: 'models/yolov8_hik_side_fish_pose_11s_250102_2026-01-02-keypoint-trial-0001.pt'
+  path_side_view: 'models/yolov8_hik_side_fish_pose_11s_250102_2026-01-02-keypoint-trial-0001.pt'

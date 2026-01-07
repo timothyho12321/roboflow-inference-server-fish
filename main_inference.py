@@ -1,5 +1,6 @@
 import cv2
 import os
+import yaml
 from dotenv import load_dotenv
 import time
 import math
@@ -20,7 +21,7 @@ IOU_THRESHOLD = 0.40
 load_dotenv()
 API_URL = "http://localhost:9001"
 API_KEY = os.getenv("API_KEY")
-MODEL_ID = "fish-pose/1"           # Format: project-name/version
+
 
 # Keypoint Definitions (Tiger Barbs)
 KEYPOINT_NAMES = ["S", "D", "T", "C", "B"]
@@ -125,9 +126,20 @@ if __name__ == "__main__":
         api_key=API_KEY
     )
 
-    # B. Start Camera (Replace with your actual IP)
-    camera_ip = "192.168.1.100"  # <--- SET YOUR CAMERA IP HERE
-    cam = AravisCaptureThread(camera_ip)
+    # Load Config
+    with open("config.yaml", "r") as f:
+        config = yaml.safe_load(f)
+
+    # Load Model Config
+    model_cfg = config.get('model', {})
+    # MODEL_ID = model_cfg.get('path_top_view')
+    MODEL_ID = model_cfg.get('path_side_view')
+    # B. Start Camera (Using ID from config)
+    # Using top_source as default. Modify if you want to use side_source or both.
+    # camera_id = config.get('top_source') 
+    side_camera_id = config.get('side_source')
+    
+    cam = AravisCaptureThread(side_camera_id)
     cam.start()
 
     # C. Visualization Annotators
